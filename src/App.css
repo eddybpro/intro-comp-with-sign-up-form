@@ -1,0 +1,214 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
+
+:root {
+  --color-brand-1: hsl(249, 10%, 26%);
+  --color-brand-1-0: hsla(249, 10%, 26%, 0.3);
+  --color-brand-2: hsl(246, 25%, 77%);
+
+  --color-site-1: hsl(0, 100%, 74%);
+  --color-site-2: hsl(0, 0%, 100%);
+  --color-site-3: hsl(154, 59%, 51%);
+  --color-site-4: hsl(248, 32%, 49%);
+
+  --font-poppins: "Poppins", sans-serif;
+}
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: var(--font-poppins);
+}
+
+html {
+  font-size: 62.5%;
+}
+
+#root {
+  width: 100%;
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  background: url("./assets/bg-intro-mobile.png");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-color: var(--color-site-1);
+  padding: 6rem 0 4rem;
+}
+
+main {
+  padding: 2rem 1rem;
+  width: 90%;
+}
+
+.Head {
+  text-align: center;
+}
+
+.Head-Title {
+  color: var(--color-site-2);
+  font-size: 3.2rem;
+  margin-bottom: 2rem;
+  font-weight: 600;
+}
+
+.Head-Para {
+  color: var(--color-brand-2);
+  filter: brightness(130%);
+  font-size: 1.6rem;
+  font-weight: 500;
+  margin-bottom: 2rem;
+}
+
+.FormBox {
+  padding-top: 3rem;
+}
+
+.FormBox-Trial {
+  background-color: var(--color-site-4);
+  padding: 2rem 2.5rem;
+  text-align: center;
+  border-radius: 1rem;
+  margin-bottom: 2.5rem;
+  box-shadow: 0 8px 0 0.25px var(--color-brand-1-0);
+}
+
+.FormBox-Trial > p {
+  font-size: 1.8rem;
+  font-weight: 400;
+  color: var(--color-brand-2);
+  line-height: 2.8rem;
+  filter: brightness(130%);
+}
+
+.FormBox-Trial > p > span {
+  font-weight: 700;
+}
+
+.FormBox-Form {
+  background-color: var(--color-site-2);
+  padding: 2rem;
+  border-radius: 1rem;
+  box-shadow: 0 8px 0 0.25px var(--color-brand-1-0);
+}
+
+.FormBox-Form > label {
+  display: block;
+  margin-bottom: 1.5rem;
+  width: 100%;
+  position: relative;
+}
+
+.FormBox-Form > label.error::after {
+  content: "";
+  position: absolute;
+  top: 25%;
+  right: 0.5rem;
+  display: block;
+  width: 2rem;
+  height: 2rem;
+  background: url("./assets/icon-error.svg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.FormBox-Form > label > input {
+  width: 100%;
+  padding: 1.5rem 2.5rem;
+  font-size: 1.6rem;
+  border: 1px solid var(--color-brand-2);
+  outline: none;
+  border-radius: 0.5rem;
+  text-transform: capitalize;
+  color: var(--color-brand-1);
+}
+
+.FormBox-Form > label.error > input {
+  border-color: var(--color-site-1);
+}
+
+.FormBox-Form > label > input::placeholder {
+  color: var(--color-brand-1);
+  font-weight: 600;
+}
+
+.FormBox-Form-error {
+  color: var(--color-site-1);
+  font-size: 1.2rem;
+  font-weight: 500;
+  text-align: right;
+  margin-right: 0.8rem;
+  margin-top: 0.2rem;
+}
+
+.FormBox-Form-Btn {
+  display: block;
+  width: 100%;
+  margin: auto;
+  border: none;
+  outline: none;
+  font-size: 1.7rem;
+  color: var(--color-site-2);
+  text-transform: uppercase;
+  padding: 1.5rem 2.5rem;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  margin-bottom: 1.5rem;
+  box-shadow: inset 0 -5px 0 -2px var(--color-brand-1-0);
+  letter-spacing: 1px;
+  background-color: var(--color-site-3);
+  transition: all 0.2s ease-in-out;
+}
+
+.FormBox-Form-Btn:hover {
+  filter: brightness(140%);
+}
+
+.FormBox-Form-Terms {
+  font-size: 1.3rem;
+  line-height: 2.2rem;
+  color: var(--color-brand-2);
+  text-align: center;
+  font-weight: 500;
+}
+
+.FormBox-Form-Terms > a {
+  color: var(--color-site-1);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+@media screen and (min-width: 768px) {
+  #root {
+    width: 100%;
+    min-height: 100vh;
+    display: grid;
+    place-items: center;
+    background: url("./assets/bg-intro-desktop.png");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-color: var(--color-site-1);
+    padding: 6rem 0 4rem;
+  }
+  main {
+    max-width: 110rem;
+    display: grid;
+    grid-template-columns: 50rem 45rem;
+    gap: 3rem;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .Head {
+    text-align: left;
+  }
+
+  .Head-Title {
+    width: 35rem;
+  }
+}
