@@ -129,6 +129,7 @@ main {
 
 .FormBox-Form > label.error > input {
   border-color: var(--color-site-1);
+  color: var(--color-site-1);
 }
 
 .FormBox-Form > label > input::placeholder {
@@ -182,6 +183,18 @@ main {
   font-weight: 600;
 }
 
+@media screen and (max-width: 300px) {
+  .FormBox-Form-Btn {
+    padding: 1.5rem 0.5rem;
+  }
+}
+
+@media screen and (min-width: 480px) {
+  main {
+    max-width: 35rem;
+  }
+}
+
 @media screen and (min-width: 768px) {
   #root {
     width: 100%;
@@ -196,10 +209,9 @@ main {
     padding: 2rem 0;
   }
   main {
-    max-width: 110rem;
     display: grid;
-    grid-template-columns: 50rem 45rem;
-    gap: 3rem;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
     align-items: center;
     justify-content: center;
   }
@@ -210,5 +222,16 @@ main {
 
   .Head-Title {
     width: 35rem;
+  }
+}
+
+@media screen and (min-width: 1040px) {
+  main {
+    max-width: 115rem;
+    display: grid;
+    grid-template-columns: 50rem 50rem;
+    gap: 3rem;
+    align-items: center;
+    justify-content: center;
   }
 }
