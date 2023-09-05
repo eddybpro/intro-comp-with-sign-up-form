@@ -184,6 +184,10 @@ main {
 }
 
 @media screen and (max-width: 300px) {
+  main {
+    width: 100%;
+    padding: 2rem 0.5rem;
+  }
   .FormBox-Form-Btn {
     padding: 1.5rem 0.5rem;
   }
