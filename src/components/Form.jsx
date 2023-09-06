@@ -15,7 +15,7 @@ function Form() {
     password: false,
   });
 
-  //const emailValidation =
+  const emailValidation =
   /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
 
   const strValidation = /^.{3,}$/;
@@ -49,7 +49,7 @@ function Form() {
         password: !error.password,
       }));
     }
-    if (!strValidation.test(state.email)) {
+    if (!emailValidation.test(state.email)) {
       event.preventDefault();
       setError((error) => ({
         ...error,
@@ -57,7 +57,7 @@ function Form() {
       }));
     }
 
-    console.log(error);
+    
   };
 
   return (
