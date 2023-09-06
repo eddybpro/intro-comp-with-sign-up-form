@@ -15,8 +15,8 @@ function Form() {
     password: false,
   });
 
-  const emailValidation =
-    /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+  //const emailValidation =
+  /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
 
   const strValidation = /^.{3,}$/;
 
@@ -28,26 +28,29 @@ function Form() {
   };
 
   const handleSubmit = (event) => {
-    event.preventDefault();
     if (!strValidation.test(state.firstName)) {
+      event.preventDefault();
       setError((error) => ({
         ...error,
         fName: !error.fName,
       }));
     }
     if (!strValidation.test(state.lastName)) {
+      event.preventDefault();
       setError((error) => ({
         ...error,
         lName: !error.lName,
       }));
     }
     if (!strValidation.test(state.password)) {
+      event.preventDefault();
       setError((error) => ({
         ...error,
         password: !error.password,
       }));
     }
-    if (!emailValidation.test(state.email)) {
+    if (!strValidation.test(state.email)) {
+      event.preventDefault();
       setError((error) => ({
         ...error,
         email: !error.email,
@@ -70,6 +73,7 @@ function Form() {
         method="POST"
         className="FormBox-Form"
         onSubmit={handleSubmit}
+        noValidate
       >
         <label htmlFor="f-name" className={error.fName ? "error" : ""}>
           <input
